@@ -1,5 +1,7 @@
 const { ApolloServer, gql } = require('apollo-server')
 const axios = require('axios').default
+require('dotenv').config()
+
 
 const typeDefs = gql`
 	
@@ -54,31 +56,31 @@ const resolvers = {
 				method: 'post',
 				baseURL: 'https://api.github.com/graphql',
 				headers: {
-					Authorization: "Bearer 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"
+					Authorization: `Bearer ${process.env.TOKEN}`
 				},
 				data: {
 					query: query,
 					variables: { login }
 				}
-			})
+			}).then(response => response.data).catch(error => console.log(error))
 
-			console.log(response.data.data.user.repository)
+			console.log(response)
 
-			const d = {
-				name: response.data.data.user.name,
-				id: response.data.data.user.id,
-				login: response.data.data.user.login,
-				repository: {
-					name: response.data.data.user.repository.name
-				},
-				isPrivate: response.data.data.user.repository.isPrivate,
-				owner: {
-					login: response.data.data.user.repository.owner.login
-				},
-				diskUsage: response.data.data.user.repository.diskUsage
-			}
+			// const d = {
+			// 	name: response.data.data.user.name,
+			// 	id: response.data.data.user.id,
+			// 	login: response.data.data.user.login,
+			// 	repository: {
+			// 		name: response.data.data.user.repository.name
+			// 	},
+			// 	isPrivate: response.data.data.user.repository.isPrivate,
+			// 	owner: {
+			// 		login: response.data.data.user.repository.owner.login
+			// 	},
+			// 	diskUsage: response.data.data.user.repository.diskUsage
+			// }
 
-			return d
+			return
 
 		}
 	}
