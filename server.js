@@ -7,4 +7,4 @@ const server = new ApolloServer({
 	resolvers
 })
 
-server.listen().then(() => console.log("Server running at 4000"))
+server.listen().then(() => console.log(`🚀  Server ready at: 4000`))
