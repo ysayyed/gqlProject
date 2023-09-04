@@ -1,20 +1,23 @@
-# **A GraphQL project to search github repositories by utilising Github GraphQL API.**
+## **A GraphQL project to search github repositories by utilising Github GraphQL API.**
 
-## **Author: Sayyed Muhammed Yaseen**
+### **Author: Sayyed Muhammed Yaseen**
 
-### _Notes:_
+### Notes:
 
 1. While querying use your github token.
 2. For login variable you can use my username i.e. "ysayyed".
 3. Credits: This example uses a repository : "GreenridgeApp" from user : "roma8389".
-
 4. Run following command to install dependencies:
 
-   > npm install
+```
+npm install
+```
 
-5. Use follwoing command to start the server:
+5. Use following command to start the server:
 
-   > npm start
+```
+npm start
+```
 
 6. You can also include Graphiql client or Graphql playground. Install the required dependencies and include it in definition of server and add it inside plugins.
 

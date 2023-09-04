@@ -53,25 +53,3 @@ const typeDefs = gql`
 
 module.exports = typeDefs
 
-// 	`query MyQuery {
-// 	repository(name: "GreenridgeApp", owner: "roma8389") {
-// 	  name
-// 	  owner {
-// 		login
-// 	  }
-// 	  isPrivate
-// 	  diskUsage
-// 	  object(expression: "master:") {
-// 		... on Tree {
-// 		  entries{
-// 			name
-// 			object{
-// 			  ... on Blob{
-// 				text
-// 			  }
-// 			}
-// 		  }
-// 		}
-// 	  }
-// 	}
-//   }`
